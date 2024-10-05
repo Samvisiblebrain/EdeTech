@@ -54,14 +54,14 @@
                 </div>
                 <div class="modal-body">
                     <!-- Registration Form -->
-                    <form id="registrationForm" name="Signup" method="post">
+                    <form id="registrationForm" name="Signup" method="post" onsubmit="return validateEmail()">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" name="first" id="name" placeholder="Enter your name">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            <input type="text" class="form-control" id="email" placeholder="Enter your email">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
@@ -97,7 +97,7 @@
                             <form class="login-form">
                                 <h3 class="text-center mb-4">Login to Your Account</h3>
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Email Address" required>
+                                    <input type="text" class="form-control" placeholder="Email Address">
                                 </div>
                                 <div class="mb-3">
                                     <input type="password" class="form-control" placeholder="Password" required>
@@ -491,6 +491,19 @@
             const modalDialog = modal.querySelector('.modal-dialog');
             modalDialog.style.animation = 'slideOut 0.5s ease-in-out';
         });
+
+        function validateEmail() {
+        var kuku = document.Signup.email.value; 
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (emailPattern.test(kuku)) {  
+            alert("Email is ok");
+            return true;
+        } else {
+            alert("Email is not valid");
+            return false; 
+        }
+    }
     </script>
     
 </html>
