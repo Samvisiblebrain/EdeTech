@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Online Courses</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Assets/Stylesheet/edutech.css">
+    <script src="/Assets/JS/formvalid.js"></script>  
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            padding-top: 70px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="Assets/Images/logo.png" alt="logo" width="200px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <div class="search-bar d-none d-lg-block">
+                        <input type="text" placeholder="Search for courses...">
+                    </div>
+                    <li class="nav-item"><a class="btn btn-primary animated-btn" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Sign Up</a></li>&nbsp;
+                    <li class="nav-item"><a class="btn btn-outline-light animated-btn-outline" href="#" data-bs-toggle="modal" data-bs-target="#fullscreenModal">Log In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        <!-- Registration Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Registration Form -->
+                    <form id="registrationForm" name="Signup" method="post">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" name="first" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                            <!-- Password strength bar -->
+                            <div id="passwordStrength"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" onclick="FormValidation()" form="registrationForm">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+            <!-- Full-Screen Modal -->
+        <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-labelledby="fullscreenModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="fullscreenModalLabel">Login</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="login-container w-100">
+                            <form class="login-form">
+                                <h3 class="text-center mb-4">Login to Your Account</h3>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="Email Address" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="password" class="form-control" placeholder="Password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                                <p class="form-text mt-3 text-center">
+                                    Forgot password? <a href="#">Click here</a>
+                                </p>
+                                <p class="form-text text-center">
+                                    Don't have an account? <a href="#">Sign Up</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <!-- Hero Section -->
+ 
+            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    
+                    <div class="carousel-inner">
+                      <!-- First Slide -->
+                      <div class="carousel-item active">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h1 class="animate__animated animate__fadeInDown">NCERT</h1>
+                          <p class="animate__animated animate__fadeInUp">New Batch Started</p>
+                          <a href="#" class="btn btn-primary">Subcribe Now</a>
+                        </div>
+                        <img src="Assets/Images/hero3.png" class="d-block w-100" alt="Slide 1">
+                      </div>
+                  
+                      <!-- Second Slide -->
+                      <div class="carousel-item">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h1 class="animate__animated animate__fadeInDown"></h1>
+                          <p class="animate__animated animate__fadeInUp"></p>
+                          <a href="#" class="btn btn-secondary">Subcribe Now</a>
+                        </div>
+                        <img src="Assets/Images/hero1.gif" class="d-block w-100" alt="Slide 2">
+                      </div>
+                  
+                      <!-- Third Slide -->
+                      <div class="carousel-item">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h1 class="animate__animated animate__fadeInDown"></h1>
+                          <p class="animate__animated animate__fadeInUp"></p>
+                          <a href="#" class="btn btn-success">Get Started</a>
+                        </div>
+                        <img src="Assets/Images/hero2.gif" class="d-block w-100" alt="Slide 3">
+                      </div>
+                    </div>
+                  
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+        <section class="live-class-section py-5">
+            <div class="container position-relative">
+              <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                  <h2 class="mb-4">Join Your Live Class Now</h2>
+                  <p>Enter your registered phone number to join the live class.</p>
+        
+                  <form action="/join-class" method="POST" class="mt-4">
+                    <div class="form-group">
+                      <label for="phoneNumber">Registered Phone Number</label>
+                      <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number" required pattern="[0-9]{10}" title="Please enter a 10-digit phone number">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Join Live Class</button>
+                  </form>
+        
+                </div>
+              </div>
+        
+              <!-- Rotating Boy Image -->
+              <div class="rotating-boy">
+                <img src="Assets/Images/happy-teachers-day-students-blackboard.gif" alt="Student" class="boy-img">
+              </div>
+            </div>
+          </section>
+
+        <section class="container text-center">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h2 class="captionColor">Looking for Home Tutors?</h2>
+                    <img src="https://static.hometutorsite.com/content/images/landing/student-reg-steps.jpg" class="img-fluid" alt="Home Tutors">
+                    <div class="home-free-btn">
+                        <a href="/home-tuition/home-tutors/cbse-icse-stateboard/?utm_source=organic&amp;utm_medium=hometutorsite&amp;utm_content=home-tutor&amp;utm_campaign=home-page&amp;utm_term=home-tutor-wanted" class="btn btn-lg btn-info btn-blue mt-3">I Need A Home/Online Tutor <img src="https://static.hometutorsite.com/content/images/common-sm/transparent.png" class="common-sm-sprite home-registration-arrow" alt="Arrow" width="1" height="1"></a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h2 class="captionColor">Looking for Tuition Jobs?</h2>
+                    <img src="https://static.hometutorsite.com/content/images/landing/tutor-reg-steps.jpg" class="img-fluid" alt="Tuition Jobs">
+                    <div class="home-free-btn">
+                        <a href="/home-tuition/home-tutors/cbse-icse-stateboard/?user=tutor&amp;utm_source=organic&amp;utm_medium=hometutorsite&amp;utm_content=home-tuition&amp;utm_campaign=home-page&amp;utm_term=home-tutor-jobs-home-tuitions-near-me" class="btn btn-lg btn-info btn-blue mt-3">Join As Tutor for Free <img src="https://static.hometutorsite.com/content/images/common-sm/transparent.png" class="common-sm-sprite home-registration-arrow" alt="Arrow" width="1" height="1"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- OUR SPECIALISATION SECTION -->
+        <section id="specialisation" class="py-5">
+            <div class="container">
+                <div class="row text-center mb-4">
+                    <div class="col">
+                        <h2 class="section-title">OUR SPECIALISATION</h2>
+                        <p class="section-description">You'll discover the greatest professors for all of the popular disciplines at Krishna Home Tutions, including math, chemistry, science, physics, biology, accountancy, economics, psychology, and sociology. We also have the finest Gold Medal winner instructors for NEET, JEE, CPT, CLAT, and other competitive exams.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <!-- Card 1: 24*7 Support -->
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <div class="specialisation-card p-4 shadow">
+                            <i class="fas fa-headset fa-2x mb-3"></i>
+                            <h4 class="card-title">24*7 Support</h4>
+                            <p>Round-the-clock assistance for your queries.</p>
+                        </div>
+                    </div>
+                    <!-- Card 2: Free Demo Class -->
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <div class="specialisation-card p-4 shadow">
+                            <i class="fas fa-chalkboard-teacher fa-2x mb-3"></i>
+                            <h4 class="card-title">Free Demo Class</h4>
+                            <p>Experience teaching quality before enrolling.</p>
+                        </div>
+                    </div>
+                    <!-- Card 3: Exam and Job Oriented -->
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <div class="specialisation-card p-4 shadow">
+                            <i class="fas fa-clipboard-check fa-2x mb-3"></i>
+                            <h4 class="card-title">Exam & Job Oriented</h4>
+                            <p>Focus on exams and securing jobs with our tailored classes.</p>
+                        </div>
+                    </div>
+                    <!-- Card 4: Study Anytime, Anywhere -->
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <div class="specialisation-card p-4 shadow">
+                            <i class="fas fa-laptop-house fa-2x mb-3"></i>
+                            <h4 class="card-title">Study Anytime, Anywhere</h4>
+                            <p>Learn flexibly from anywhere.</p>
+                        </div>
+                    </div>
+                    <!-- Card 5: Pocket Friendly -->
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <div class="specialisation-card p-4 shadow">
+                            <i class="fas fa-wallet fa-2x mb-3"></i>
+                            <h4 class="card-title">Pocket Friendly</h4>
+                            <p>Quality education that doesn't break the bank.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- Course Categories -->
+        <section id="course-categories" class="container my-5">
+            <center><h2 class="text-center mb-4 section-title">Popular Course Categories</h2></center>
+            <div class="row g-4">
+                <!-- Card 1: Web Development -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card category-card text-center p-4">
+                        <div class="icon-bg">
+                            <i class="fas fa-code fa-3x"></i>
+                        </div>
+                        <h5>Web Development</h5>
+                        <p>Learn the latest web technologies.</p>
+                    </div>
+                </div>
+                <!-- Card 2: Data Science -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card category-card text-center p-4">
+                        <div class="icon-bg">
+                            <i class="fas fa-chart-line fa-3x"></i>
+                        </div>
+                        <h5>Data Science</h5>
+                        <p>Master data analytics and machine learning.</p>
+                    </div>
+                </div>
+                <!-- Card 3: Graphic Design -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card category-card text-center p-4">
+                        <div class="icon-bg">
+                            <i class="fas fa-palette fa-3x"></i>
+                        </div>
+                        <h5>Graphic Design</h5>
+                        <p>Unleash your creativity with design tools.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-3">
+                <!-- Card 4: All State Board -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card category-card text-center p-4">
+                        <div class="icon-bg">
+                            <i class="fas fa-book-open fa-3x"></i>
+                        </div>
+                        <h5>All State Board</h5>
+                        <p>Master and clear the state board exams.</p>
+                    </div>
+                </div>
+                <!-- Card 5: NCERT -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card category-card text-center p-4">
+                        <div class="icon-bg">
+                            <i class="fas fa-graduation-cap fa-3x"></i>
+                        </div>
+                        <h5>NCERT</h5>
+                        <p>Learn and get instructed by the best teachers.</p>
+                    </div>
+                </div>
+                <!-- Card 6: CPT/NEET -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card category-card text-center p-4">
+                        <div class="icon-bg">
+                            <i class="fas fa-user-md fa-3x"></i>
+                        </div>
+                        <h5>CPT/NEET</h5>
+                        <p>Get trained by the top tutors for competitive exams.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- Testimonial Section -->
+        <section class="testimonial-area testimonial-pad pt-50 pb-60 pt-md-95 pb-md-70 pt-xs-95 pb-xs-70">
+            <div class="container custom-container-testimonial">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <div class="section-title text-center text-md-start mb-35">
+                            <center><h5 class="bottom-line mb-25">Our</h5></center>
+                            <h2 class="mb-25">Testimonials</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center text-lg-end">
+                        <a href="#" class="theme_btn">Read All Reviews</a>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center mt-4">
+                    <!-- Video Embed in Center -->
+                    <div class="col-sm-12 col-md-8">
+                        <iframe style="width:100%;" height="315" src="https://www.youtube.com/embed/UEoVlGBCSY8" title="Testimonials" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Edutech Section -->
+        <section class="edutech-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10">
+                        <!-- Section Title -->
+                        <h2 class="section-title">The Future of Edutech</h2>
+
+                        <!-- Section Content -->
+                        <p class="section-content">
+                            Education technology, or edutech, has revolutionized the way people learn and teach across the world. By integrating cutting-edge technologies such as artificial intelligence, machine learning, and interactive platforms, edutech enables students to access personalized learning experiences anytime and anywhere. The rise of online courses, virtual classrooms, and gamified education tools has broken down geographical barriers, providing learners with access to high-quality resources regardless of their location.
+                        </p>
+
+                        <p class="section-content">
+                            The flexibility offered by edutech solutions is particularly valuable for working professionals, allowing them to upskill at their own pace while balancing work and personal commitments. Edutech has also transformed traditional classrooms, with smartboards, interactive assessments, and collaborative tools enhancing both teaching and student engagement. Furthermore, data-driven insights allow educators to track student progress in real-time, providing personalized support where needed.
+                        </p>
+
+                        <p class="section-content">
+                            As the edutech sector continues to grow, it promises to make education more accessible, inclusive, and innovative. Whether it’s learning a new language, mastering programming, or preparing for competitive exams, edutech empowers learners of all ages to thrive in today’s fast-paced digital world.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- Missed Call Box -->
+                    <div class="col-md-4">
+                        <div class="contact-box">
+                            <i class="fas fa-phone-alt"></i>
+                            <h4>Give Missed Call</h4>
+                            <p>9999999999 (9am to 6pm)</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Email Box -->
+                    <div class="col-md-4">
+                        <div class="contact-box">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Email</h4>
+                            <a href="mailto:info@hometutorsite.com">info@edulearn.com</a>
+                        </div>
+                    </div>
+        
+                    <!-- WhatsApp Box -->
+                    <div class="col-md-4">
+                        <div class="contact-box">
+                            <i class="fab fa-whatsapp"></i>
+                            <h4>WhatsApp</h4>
+                            <p>9999999999 (9am to 6pm)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+        <footer>
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Courses Section -->
+                    <div class="col-md-3 footer-section">
+                        <h3>Courses</h3>
+                        <a href="#" class="btn btn-primary mb-2" style="color: #f4f4f4; font-weight: bold;">Math (NCERT)</a>
+                        <a href="#" class="btn btn-primary mb-2" style="color: #f4f4f4; font-weight: bold;">Math Foundations</a>
+                        <a href="#" class="btn btn-primary mb-2" style="color: #f4f4f4; font-weight: bold;">Math (Maharashtra)</a>
+                        <a href="#" class="btn btn-primary mb-2" style="color: #f4f4f4; font-weight: bold;">Science (NCERT)</a>
+                    </div>
+        
+                    <!-- Contact Section -->
+                    <div class="col-md-3 footer-section">
+                        <h3>Contact</h3>
+                        <a href="#" class="btn btn-warning mb-2">Help Center</a>
+                        <a href="#" class="btn btn-warning mb-2">Support Community</a>
+                        <a href="#" class="btn btn-warning mb-2">Share Your Story</a>
+                        <a href="#" class="btn btn-warning mb-2">Press</a>
+                    </div>
+        
+                    <!-- Social Section -->
+                    <div class="col-md-3 footer-section">
+                        <h3 id="socialsize">Social</h3>
+                        <div class="social-section">
+                            <a href="#" target="_blank"><i class="fa fa-facebook" style="color: #007bff;">&nbsp;@edulearn</i></a>
+                            <a href="#" target="_blank"><i class="fa fa-linkedin" style="color: #007bff;">&nbsp;@edulearn</i></a>
+                            <a href="#" target="_blank"><i class="fa fa-instagram" style="color: #007bff;">&nbsp;@edulearn</i></a>
+                            <a href="#" target="_blank"><i class="fa fa-twitter" style="color: #007bff;">&nbsp;@edulearn</i></a>
+                        </div>
+                    </div>
+        
+                    <!-- About Section -->
+                    <div class="col-md-3 footer-section">
+                        <h3>About</h3>
+                        <a href="about.html" class="btn btn-warning mb-2">News</a>
+                        <a href="about.html" class="btn btn-warning mb-2">Our Team</a>
+                        <a href="about.html" class="btn btn-warning mb-2">Our Interns</a>
+                        <a href="about.html" class="btn btn-warning mb-2">Our Leadership</a>
+                        <a href="about.html" class="btn btn-warning mb-2">Careers</a>
+                    </div>
+                </div> <!-- End of Row -->
+            </div> <!-- End of Container Fluid -->
+        
+        <div class="container-fluid">
+        <div class="row">         
+        <div class="col-md-12">
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Company. All rights reserved. | 
+                <a href="#" class="btn btn-sm btn-primary" style="text-decoration: none;">Terms of Use</a> | 
+                <a href="#" class="btn btn-sm btn-primary" style="text-decoration: none;">Privacy Policy</a> | 
+                <span class="footer-country">Country: India</span>
+            </p>
+        </div>
+        </div>
+    </div>
+</div>
+    </div>
+    </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const modal = document.getElementById('registerModal');
+    
+        // Hook into modal hide event for slideOut animation
+        modal.addEventListener('hide.bs.modal', function (e) {
+            const modalDialog = modal.querySelector('.modal-dialog');
+            modalDialog.style.animation = 'slideOut 0.5s ease-in-out';
+        });
+    </script>
+    
+</html>

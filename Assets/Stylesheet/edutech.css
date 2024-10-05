@@ -1,0 +1,953 @@
+    /* General transition for nav links */
+    .navbar-nav .nav-link {
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #f0ad4e;
+        transform: scale(1.1); /* Enlarge slightly on hover */
+    }
+
+    /* Button animation */
+    .animated-btn {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .animated-btn:hover {
+        background-color: #007bff;
+        transform: translateY(-3px); /* Move upwards on hover */
+    }
+
+    /* Outline button animation */
+    .animated-btn-outline {
+        transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .animated-btn-outline:hover {
+        color: #007bff;
+        border-color: #007bff;
+        transform: translateY(-3px); /* Move upwards on hover */
+    }
+
+    /* Navbar background transition when scrolling */
+    .navbar {
+        transition: background-color 0.5s ease;
+    }
+
+    .navbar.scrolled {
+        background-color: #343a40; /* Change color when scrolled */
+    }
+    .social-section{
+        color: #007bff !important;
+    }
+    /* Modal entrance animation */
+    @keyframes slideIn {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Modal fade-out animation */
+    @keyframes slideOut {
+        0% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    }
+
+    /* Apply transition to modal dialog */
+    .modal.fade .modal-dialog {
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    }
+
+    /* Apply entrance animation */
+    .modal.show .modal-dialog {
+        animation: slideIn 0.5s ease-in-out;
+    }
+
+    /* Smooth hover effect for the buttons */
+    .btn {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Button hover effect */
+    .btn:hover {
+        transform: scale(1.05);
+    }
+
+    /* Smooth transition effect for input focus */
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+        /* Shake animation for incorrect inputs */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    
+        /* Animated focus effect on input */
+        .form-control:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+            transition: all 0.3s ease;
+        }
+    
+        /* Animated label when focusing on the input */
+        .form-label {
+            transition: color 0.3s ease;
+        }
+    
+        .form-control:focus + .form-label {
+            color: #28a745; /* Color change on focus */
+        }
+    
+        /* Password strength bar */
+        #passwordStrength {
+            height: 5px;
+            background-color: #e0e0e0;
+            margin-top: 5px;
+            width: 0%;
+            transition: width 0.4s ease-in-out;
+        }
+    
+        /* When password field gets filled, it animates */
+        .form-control:valid ~ #passwordStrength {
+            width: 100%;
+            background-color: #28a745; /* Full green bar */
+        }
+    
+        /* Shake animation on incorrect input */
+        .input-error {
+            animation: shake 0.3s ease-in-out;
+        }
+
+        .carousel-caption {
+            bottom: 200px; /* Adjust position of text */
+          }
+          
+          .carousel-caption h1 {
+            font-size: 3rem;
+          }
+          
+          .carousel-caption p {
+            font-size: 1.25rem;
+          }
+          
+          @media (max-width: 768px) {
+            .carousel-caption {
+              bottom: 100px;
+            }
+          
+            .carousel-caption h1 {
+              font-size: 2rem;
+            }
+          
+            .carousel-caption p {
+              font-size: 1rem;
+            }
+          }
+          
+
+
+                        /* General transition for nav links */
+        .navbar-nav .nav-link {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f0ad4e;
+            transform: scale(1.1);
+        }
+
+        /* Button animation */
+        .animated-btn {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .animated-btn:hover {
+            background-color: #007bff;
+            transform: translateY(-3px);
+        }
+
+        .animated-btn-outline {
+            transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .animated-btn-outline:hover {
+            color: #007bff;
+            border-color: #007bff;
+            transform: translateY(-3px);
+        }
+
+        /* Navbar background transition */
+        .navbar {
+            transition: background-color 0.5s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: #343a40;
+        }
+        /* Course Categories */
+        .category-card {
+            border: none;
+            transition: transform 0.3s ease;
+            color: #007bff;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #f4f4f4;
+            padding: 20px 0;
+        }
+
+        .footer-section {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .footer-section:hover {
+            transform: scale(1.05);
+            background-color: #eaeaea;
+        }
+
+        .footer-section h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            display: block;
+            color: #555;
+            text-decoration: none;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            background-color: #eaeaea;
+            color:black;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .footer-bottom a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-country {
+            display: inline-block;
+            margin: 0 10px;
+            color: green;
+            font-size: large;
+        }
+
+        .social-section {
+            margin-top: 20px;
+        }
+
+        .social-section a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #555;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-section a:hover {
+            color: #000;
+            transform: scale(1.2);
+        }
+
+        /* Media Queries */
+        @media (max-width: 767px) {
+            .footer-section {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .footer-bottom {
+                font-size: 12px;
+            }
+
+            .social-section {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+
+                /* Search Bar */
+                .navbar .search-bar {
+            flex: 1;
+            margin: 0 250px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 2.5px solid #ccc;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            border-color: #fff200;
+            outline: none;
+        }
+
+        /* External CSS for OUR SPECIALISATION Section */
+
+        /* General Section Styling */
+        #specialisation {
+            background-color: #f9f9f9;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Card Styling */
+        .specialisation-card {
+            background-color: white;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .specialisation-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .specialisation-card h4 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .specialisation-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .specialisation-card i {
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        .specialisation-card:hover i {
+            color: #28a745;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 992px) {
+            .col-lg-2 {
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-lg-2, .col-md-6 {
+                flex: 0 0 45%;
+                max-width: 45%;
+                margin-bottom: 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .specialisation-card h4 {
+                font-size: 18px;
+            }
+
+            .specialisation-card p {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .col-lg-2, .col-md-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .specialisation-card {
+                padding: 15px;
+            }
+        }
+        /* Looking for Home Tutors? */
+        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+            margin-top: 2.4rem !important;
+            margin-bottom: 1.4rem;
+            font-weight: 500;
+            line-height: 2.1 !important;
+        }
+
+        .card-title {
+            margin-bottom: 0.75rem !important;
+        }
+        .shadow {
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 1.15) !important;}
+
+            .captionColor {
+                color: #007bff; /* Example color, change as needed */
+            }
+            
+            .btn-blue {
+                background-color: #007bff; /* Button color */
+                border-color: #007bff; /* Button border color */
+            }
+            
+            .btn-blue:hover {
+                background-color: #0056b3; /* Darker shade on hover */
+                border-color: #0056b3; /* Darker border on hover */
+            }
+            
+            .home-free-btn {
+                margin-top: 20px; /* Spacing above buttons */
+            }
+            
+            @media (max-width: 768px) {
+                .home-free-btn {
+                    text-align: center; /* Center buttons on smaller screens */
+                }
+            }
+                        
+                        /* General Styling for the Section */
+            .section-title {
+                font-size: 36px;
+                font-weight: bold;
+                color: #333;
+                text-transform: uppercase;
+                position: relative;
+                display: inline-block;
+            }
+
+            .section-title::after {
+                content: '';
+                width: 60px;
+                height: 4px;
+                background-color: #007bff;
+                display: block;
+                margin: 10px auto;
+            }
+
+            /* Category Card Styling */
+            .category-card {
+                background-color: white;
+                border: none;
+                border-radius: 12px;
+                padding: 20px;
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                cursor: pointer;
+            }
+
+            .category-card h5 {
+                font-size: 20px;
+                font-weight: bold;
+                color: #007bff;
+                margin-top: 15px;
+            }
+
+            .category-card p {
+                font-size: 14px;
+                color: #555;
+            }
+
+            .category-card .icon-bg {
+                position: absolute;
+                top: -20px;
+                right: -20px;
+                width: 100px;
+                height: 100px;
+                background-color: rgba(0, 123, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: background-color 0.4s ease;
+            }
+
+            .category-card i {
+                color: #007bff;
+                transition: transform 0.3s ease, color 0.3s ease;
+            }
+
+            /* Hover Effects */
+            .category-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0px 10px 15px rgba(0, 0, 0, 1.1);
+            }
+
+            .category-card:hover i {
+                transform: scale(1.2);
+                color: #28a745;
+            }
+
+            .category-card:hover .icon-bg {
+                background-color: rgba(40, 167, 69, 0.1);
+            }
+
+            /* Media Queries */
+            @media (max-width: 992px) {
+                .category-card {
+                    padding: 15px;
+                }
+
+                .category-card h5 {
+                    font-size: 18px;
+                }
+
+                .category-card p {
+                    font-size: 12px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .category-card {
+                    padding: 10px;
+                }
+
+                .category-card h5 {
+                    font-size: 16px;
+                }
+
+                .category-card p {
+                    font-size: 12px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .category-card {
+                    padding: 10px;
+                    text-align: left;
+                }
+
+                .category-card h5 {
+                    font-size: 14px;
+                }
+
+                .category-card p {
+                    font-size: 10px;
+                }
+            }
+
+            .testimonial-area {
+                background-color: #f6ebce;
+                padding-top: 50px;
+                padding-bottom: 60px;
+            }
+            .testimonial-pad {
+                padding-top: 80px;
+                padding-bottom: 70px;
+            }
+            .section-title h5 {
+                font-size: 18px;
+                color: #007bff;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                position: relative;
+            }
+            .section-title h5::after {
+                content: '';
+                width: 60px;
+                height: 3px;
+                background-color: #007bff;
+                display: block;
+                margin-top: 5px;
+            }
+            .section-title h2 {
+                font-size: 36px;
+                font-weight: bold;
+            }
+            .theme_btn {
+                background-color: #007bff;
+                color: #000000;
+                padding: 12px 30px;
+                border-radius: 25px;
+                text-transform: uppercase;
+                font-size: 14px;
+                transition: background-color 0.3s ease;
+            }
+            .theme_btn:hover {
+                background-color: #007bff;
+                text-decoration: none;
+            }
+            iframe {
+                border-radius: 10px;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            }
+            /* Responsive padding for smaller screens */
+            @media (max-width: 768px) {
+                .testimonial-pad {
+                    padding-top: 60px;
+                    padding-bottom: 40px;
+                }
+                .section-title h2 {
+                    font-size: 28px;
+                }
+            }
+
+            .edutech-section {
+                background-color: #f5f7fa;
+                padding: 60px 0;
+            }
+    
+            .section-title {
+                font-size: 36px;
+                font-weight: bold;
+                color: #007bff;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+    
+            .section-content {
+                font-size: 18px;
+                color: #555;
+                line-height: 1.8;
+                margin-bottom: 30px;
+                text-align: justify;
+            }
+    
+            /* Responsive adjustments for smaller screens */
+            @media (max-width: 768px) {
+                .section-title {
+                    font-size: 28px;
+                }
+    
+                .section-content {
+                    font-size: 16px;
+                }
+            }
+
+                    /* Styling for the Contact Section */
+        .contact-section {
+            background-color: #ffedfdeb;
+            padding: 50px 0;
+        }
+
+        .contact-box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-box i {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-box:hover i {
+            color: #a72828;
+            transform: scale(1.2);
+        }
+
+        .contact-box h4 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .contact-box p {
+            font-size: 16px;
+            color: #555;
+            margin: 0;
+        }
+
+        .contact-box a {
+            font-size: 16px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .contact-box h4 {
+                font-size: 18px;
+            }
+
+            .contact-box p {
+                font-size: 14px;
+            }
+        }
+
+        /* Animation for appearing effect */
+        .contact-box {
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* General Page Styling */
+        body {
+            padding-top: 80px;
+        }
+
+        .navbar-brand img {
+            width: 150px;
+        }
+
+        .footer-section a {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            padding: 20px 0;
+            text-align: center;
+            background-color: #222;
+            color: #f4f4f4;
+        }
+
+        .footer-country {
+            font-weight: bold;
+        }
+
+        /* Animated Buttons */
+        .animated-btn {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+            100% { box-shadow: none; }
+        }
+
+        /* About Page Specific Styles */
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .about-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-counter {
+            background-color: #007bff;
+            padding: 50px 0;
+            color: #fff;
+        }
+
+        .counter-box {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .counter-box h3 {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .counter-box p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 100px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+        button, input, optgroup, select, textarea {
+            margin: 5px !important;}
+
+                /* Fullscreen Modal Styling */
+                .modal-fullscreen {
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+
+        .modal-content {
+            width: 100%;
+            height: 100%;
+            border-radius: 7;
+            position: relative;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header of the modal */
+        .modal-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h5 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .modal-header .btn-close {
+            background-color: transparent;
+            color: #fff;
+            font-size: 24px;
+            border: none;
+        }
+
+        /* Body content of the modal */
+        .modal-body {
+            padding: 40px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        /* Modal Footer */
+        .modal-footer {
+            background-color: #f9f9f9;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Open/Close Animations */
+        .modal.fade .modal-dialog {
+            transform: translateY(-100%);
+            transition: transform 0.4s ease-out;
+        }
+
+        .modal.show .modal-dialog {
+            transform: translateY(0);
+        }
+        
+        .live-class-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 40px 0;
+          }
+          
+          .live-class-section h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #007bff;
+          }
+          
+          #phoneNumber {
+            font-size: 16px;
+          }
+
+
+                    /* Rotating boy image animation */
+            .rotating-boy {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 300px;
+                height: 300px;
+                animation: rotate 8s linear infinite;
+            }
+            
+            .boy-img {
+                width: 60%;
+                height: auto;
+                border-radius: 20%;
+                border: 2px solid #007bff;
+            }
+            
+            @keyframes rotate {
+                from {
+                transform: translate(-10%, -10%) rotate(0deg);
+                }
+                to {
+                transform: translate(-50%, -50%) rotate(45deg);
+                }
+            }
+         
